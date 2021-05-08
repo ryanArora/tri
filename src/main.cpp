@@ -2,8 +2,8 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-const int WIDTH = 800;
-const int HEIGHT = 600;
+const int WIDTH {800};
+const int HEIGHT {600};
 
 const char *vertexShaderSource =
   "#version 330 core\n"
@@ -12,7 +12,8 @@ const char *vertexShaderSource =
   "{\n"
   " gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
   "}\0";
-const char *fragmentShaderSource = "#version 330 core\n"
+const char *fragmentShaderSource =
+  "#version 330 core\n"
   "out vec4 FragColor;\n"
   "void main()\n"
   "{\n"
@@ -68,7 +69,7 @@ int main(void)
   glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
   if (!success)
   {
-    glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+    glGetShaderInfoLog(fragmentShader, 512, nullptr, infoLog);
     std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << '\n';
   }
   
