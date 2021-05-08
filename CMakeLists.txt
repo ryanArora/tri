@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(test VERSION 1.0)
+project(tri VERSION 1.0)
+
+add_compile_options(-Wall -O3 -m64)
 
 file(GLOB_RECURSE HEADER_FILES include/*.h)
 file(GLOB_RECURSE SRC_FILES src/*.cpp)
@@ -14,5 +16,4 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(lib/glfw)
 add_subdirectory(lib/glad)
-
-target_link_libraries(main glfw)
+target_link_libraries(${PROJECT_NAME} glfw glad)
