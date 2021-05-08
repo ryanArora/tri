@@ -1,0 +1,3 @@
+{
+  "C_Cpp.default.includePath": ["./include", "./build/lib/glad/include", "./lib/glfw/include"]
+}
